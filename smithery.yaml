@@ -1,8 +1,56 @@
 name: healthcare-ai-governance-mcp
-description: MEOK AI Labs — healthcare ai governance
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/healthcare-ai-governance-mcp
-license: MIT
-runtime: python
-entrypoint: server.py
+description: "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for\
+  \ everyone."
+version: 1.0.0
+tools:
+- name: classify_samd
+  description: Classify AI/ML Software as Medical Device (SaMD) per FDA framework.
+  parameters:
+  - name: device_description
+    type: string
+    required: true
+  - name: intended_use
+    type: string
+    required: true
+  - name: risk_to_patient
+    type: string
+    required: false
+- name: check_cds_exemption
+  description: Check if Clinical Decision Support AI qualifies for FDA CDS exemption.
+  parameters:
+  - name: function_description
+    type: string
+    required: true
+  - name: provides_diagnosis
+    type: boolean
+    required: true
+  - name: requires_professional
+    type: boolean
+    required: true
+- name: hipaa_ai_check
+  description: Check HIPAA compliance for AI systems processing health data.
+  parameters:
+  - name: data_types
+    type: string
+    required: true
+  - name: processing_purpose
+    type: string
+    required: true
+  - name: has_baa
+    type: boolean
+    required: false
+- name: who_health_ai_ethics
+  description: Evaluate against WHO's 6 principles for health AI ethics.
+  parameters:
+  - name: ai_application
+    type: string
+    required: true
+- name: dual_compliance_check
+  description: Check dual FDA + EU AI Act compliance for medical AI devices.
+  parameters:
+  - name: description
+    type: string
+    required: true
+  - name: jurisdictions
+    type: string
+    required: false

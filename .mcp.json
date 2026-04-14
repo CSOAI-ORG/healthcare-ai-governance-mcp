@@ -1,1 +1,107 @@
-{"name":"healthcare-ai-governance-mcp","vendor":"MEOK AI Labs","homepage":"https://meok.ai","repository":"https://github.com/CSOAI-ORG/healthcare-ai-governance-mcp","runtime":"python","entrypoint":"server.py"}
+{
+  "name": "healthcare-ai-governance-mcp",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for everyone.",
+  "version": "1.0.0",
+  "tools": [
+    {
+      "name": "classify_samd",
+      "description": "Classify AI/ML Software as Medical Device (SaMD) per FDA framework.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "device_description": {
+            "type": "string"
+          },
+          "intended_use": {
+            "type": "string"
+          },
+          "risk_to_patient": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "device_description",
+          "intended_use"
+        ]
+      }
+    },
+    {
+      "name": "check_cds_exemption",
+      "description": "Check if Clinical Decision Support AI qualifies for FDA CDS exemption.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "function_description": {
+            "type": "string"
+          },
+          "provides_diagnosis": {
+            "type": "boolean"
+          },
+          "requires_professional": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "function_description",
+          "provides_diagnosis",
+          "requires_professional"
+        ]
+      }
+    },
+    {
+      "name": "hipaa_ai_check",
+      "description": "Check HIPAA compliance for AI systems processing health data.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "data_types": {
+            "type": "string"
+          },
+          "processing_purpose": {
+            "type": "string"
+          },
+          "has_baa": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "data_types",
+          "processing_purpose"
+        ]
+      }
+    },
+    {
+      "name": "who_health_ai_ethics",
+      "description": "Evaluate against WHO's 6 principles for health AI ethics.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "ai_application": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ai_application"
+        ]
+      }
+    },
+    {
+      "name": "dual_compliance_check",
+      "description": "Check dual FDA + EU AI Act compliance for medical AI devices.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "jurisdictions": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "description"
+        ]
+      }
+    }
+  ]
+}
