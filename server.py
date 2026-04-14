@@ -5,6 +5,9 @@ from datetime import datetime, timezone
 from typing import Optional
 from collections import defaultdict
 from mcp.server.fastmcp import FastMCP
+import sys, os
+sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
+from auth_middleware import check_access
 
 FREE_DAILY_LIMIT = 10
 _usage = defaultdict(list)
@@ -23,8 +26,11 @@ FDA_CLASSES = {
 }
 
 @mcp.tool()
-def classify_samd(device_description: str, intended_use: str, risk_to_patient: str = "moderate") -> str:
+def classify_samd(device_description: str, intended_use: str, risk_to_patient: str = "moderate", api_key: str = "") -> str:
     """Classify AI/ML Software as Medical Device (SaMD) per FDA framework."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     if err := _rl(): return err
     desc = (device_description + " " + intended_use).lower()
     if any(w in desc for w in ["life-sustaining", "implant", "surgery", "critical care"]):
@@ -44,8 +50,11 @@ def classify_samd(device_description: str, intended_use: str, risk_to_patient: s
         "note": "FDA TPLC approach: Predetermined Change Control Plans (PCCP) allow pre-authorized modifications."}, indent=2)
 
 @mcp.tool()
-def check_cds_exemption(function_description: str, provides_diagnosis: bool, requires_professional: bool) -> str:
+def check_cds_exemption(function_description: str, provides_diagnosis: bool, requires_professional: bool, api_key: str = "") -> str:
     """Check if Clinical Decision Support AI qualifies for FDA CDS exemption."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     if err := _rl(): return err
     # CDS exemption criteria (21st Century Cures Act)
     criteria = {
@@ -60,8 +69,11 @@ def check_cds_exemption(function_description: str, provides_diagnosis: bool, req
         "note": "Narrower exemptions as of FDA January 2026 guidance. AI analyzing retinal scans is now explicitly regulated." if not exempt else "Qualifies for CDS exemption under 21st Century Cures Act."}, indent=2)
 
 @mcp.tool()
-def hipaa_ai_check(data_types: str, processing_purpose: str, has_baa: bool = False) -> str:
+def hipaa_ai_check(data_types: str, processing_purpose: str, has_baa: bool = False, api_key: str = "") -> str:
     """Check HIPAA compliance for AI systems processing health data."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     if err := _rl(): return err
     types = [t.strip().lower() for t in data_types.split(",")]
     phi_types = ["name", "ssn", "dob", "address", "phone", "email", "medical record", "diagnosis", "treatment", "prescription", "lab result", "imaging", "genetic"]
@@ -74,8 +86,11 @@ def hipaa_ai_check(data_types: str, processing_purpose: str, has_baa: bool = Fal
         "de_identification": "Consider HIPAA Safe Harbor (18 identifiers removed) or Expert Determination method" if contains_phi else "Not required"}, indent=2)
 
 @mcp.tool()
-def who_health_ai_ethics(ai_application: str) -> str:
+def who_health_ai_ethics(ai_application: str, api_key: str = "") -> str:
     """Evaluate against WHO's 6 principles for health AI ethics."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     if err := _rl(): return err
     principles = {
         "protect_autonomy": "Ensure informed consent and human decision-making in clinical context",
@@ -90,8 +105,11 @@ def who_health_ai_ethics(ai_application: str) -> str:
         "recommendation": "Evaluate your AI against each principle. WHO mandates all 6 for health AI deployment."}, indent=2)
 
 @mcp.tool()
-def dual_compliance_check(description: str, jurisdictions: str = "us,eu") -> str:
+def dual_compliance_check(description: str, jurisdictions: str = "us,eu", api_key: str = "") -> str:
     """Check dual FDA + EU AI Act compliance for medical AI devices."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
     if err := _rl(): return err
     juris = [j.strip() for j in jurisdictions.split(",")]
     checks = {}
