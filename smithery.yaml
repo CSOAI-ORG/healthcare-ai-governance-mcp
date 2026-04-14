@@ -1,0 +1,8 @@
+name: healthcare-ai-governance-mcp
+description: MEOK AI Labs — healthcare ai governance
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/healthcare-ai-governance-mcp
+license: MIT
+runtime: python
+entrypoint: server.py
