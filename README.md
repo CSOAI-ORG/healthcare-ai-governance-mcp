@@ -1,75 +1,38 @@
-# Healthcare Ai Governance
+<div align="center">
 
-> By [MEOK AI Labs](https://meok.ai) — MEOK AI Labs — Healthcare AI Governance. FDA SaMD classification, HIPAA compliance, WHO health AI ethics, clinical decision support.
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/healthcare-ai-governance-mcp)](https://github.com/CSOAI-ORG/healthcare-ai-governance-mcp/stargazers)
 
-Healthcare AI Governance MCP — MEOK AI Labs. FDA SaMD, HIPAA, WHO health AI ethics.
+# uhealthcareU aiU governanceU mcp
+
+**Healthcare AI Governance MCP — MEOK AI Labs. FDA SaMD, HIPAA, WHO health AI ethics.**
+
+[![npm version](https://img.shields.io/npm/v/@meok-ai/healthcare-ai-governance-mcp)](https://www.npmjs.com/package/@meok-ai/healthcare-ai-governance-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
+
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/healthcare-ai-governance-mcp/issues)
+
+</div>
+
+---
 
 ## Installation
 
 ```bash
 pip install healthcare-ai-governance-mcp
+# or
+npm install -g @meok-ai/healthcare-ai-governance-mcp
 ```
 
-## Usage
+## Quick Start
 
-```bash
-# Run standalone
-python server.py
+See the project repository for full documentation and examples.
 
-# Or via MCP
-mcp install healthcare-ai-governance-mcp
-```
+## Enterprise Support
 
-## Tools
-
-### `classify_samd`
-Classify AI/ML Software as Medical Device (SaMD) per FDA framework.
-
-**Parameters:**
-- `device_description` (str)
-- `intended_use` (str)
-- `risk_to_patient` (str)
-
-### `check_cds_exemption`
-Check if Clinical Decision Support AI qualifies for FDA CDS exemption.
-
-**Parameters:**
-- `function_description` (str)
-- `provides_diagnosis` (bool)
-- `requires_professional` (bool)
-
-### `hipaa_ai_check`
-Check HIPAA compliance for AI systems processing health data.
-
-**Parameters:**
-- `data_types` (str)
-- `processing_purpose` (str)
-- `has_baa` (bool)
-
-### `who_health_ai_ethics`
-Evaluate against WHO's 6 principles for health AI ethics.
-
-**Parameters:**
-- `ai_application` (str)
-
-### `dual_compliance_check`
-Check dual FDA + EU AI Act compliance for medical AI devices.
-
-**Parameters:**
-- `description` (str)
-- `jurisdictions` (str)
-
-
-## Authentication
-
-Free tier: 15 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
-
-## Links
-
-- **Website**: [meok.ai](https://meok.ai)
-- **GitHub**: [CSOAI-ORG/healthcare-ai-governance-mcp](https://github.com/CSOAI-ORG/healthcare-ai-governance-mcp)
-- **PyPI**: [pypi.org/project/healthcare-ai-governance-mcp](https://pypi.org/project/healthcare-ai-governance-mcp/)
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
 ## License
 
-MIT — MEOK AI Labs
+MIT © [CSOAI](https://csoai.org)
