@@ -44,6 +44,13 @@ def classify_samd(device_description: str, intended_use: str, risk_to_patient: s
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        device_description (str): The device description to analyze or process.
+        intended_use (str): The intended use to analyze or process.
+        risk_to_patient (str): The risk to patient to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -99,6 +106,13 @@ def check_cds_exemption(function_description: str, provides_diagnosis: bool, req
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        function_description (str): The function description to analyze or process.
+        provides_diagnosis (bool): The provides diagnosis to analyze or process.
+        requires_professional (bool): The requires professional to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -149,6 +163,13 @@ def hipaa_ai_check(data_types: str, processing_purpose: str, has_baa: bool = Fal
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        data_types (str): The data types to analyze or process.
+        processing_purpose (str): The processing purpose to analyze or process.
+        has_baa (bool): The has baa to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -197,6 +218,11 @@ def who_health_ai_ethics(ai_application: str, api_key: str = "") -> str:
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        ai_application (str): The ai application to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -247,6 +273,13 @@ def dual_compliance_check(description: str, jurisdictions: str = "us,eu", api_ke
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        description (str): The description to analyze or process.
+        jurisdictions (str): The jurisdictions to analyze or process.
+        eu": The eu" to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
