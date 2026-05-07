@@ -1,3 +1,5 @@
+[![healthcare-ai-governance-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/healthcare-ai-governance-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/healthcare-ai-governance-mcp)
+
 <div align="center">
 
 [![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/healthcare-ai-governance-mcp)](https://github.com/CSOAI-ORG/healthcare-ai-governance-mcp/stargazers)
