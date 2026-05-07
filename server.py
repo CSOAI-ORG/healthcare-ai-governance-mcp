@@ -27,7 +27,24 @@ FDA_CLASSES = {
 
 @mcp.tool()
 def classify_samd(device_description: str, intended_use: str, risk_to_patient: str = "moderate", api_key: str = "") -> str:
-    """Classify AI/ML Software as Medical Device (SaMD) per FDA framework."""
+    """Classify AI/ML Software as Medical Device (SaMD) per FDA framework.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need to assess, audit, or verify compliance
+        requirements. Ideal for gap analysis, readiness checks, and generating
+        compliance documentation.
+
+    When NOT to use:
+        Do not use as a substitute for qualified legal counsel. This tool
+        provides technical compliance guidance, not legal advice.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -51,7 +68,24 @@ def classify_samd(device_description: str, intended_use: str, risk_to_patient: s
 
 @mcp.tool()
 def check_cds_exemption(function_description: str, provides_diagnosis: bool, requires_professional: bool, api_key: str = "") -> str:
-    """Check if Clinical Decision Support AI qualifies for FDA CDS exemption."""
+    """Check if Clinical Decision Support AI qualifies for FDA CDS exemption.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need to assess, audit, or verify compliance
+        requirements. Ideal for gap analysis, readiness checks, and generating
+        compliance documentation.
+
+    When NOT to use:
+        Do not use as a substitute for qualified legal counsel. This tool
+        provides technical compliance guidance, not legal advice.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -70,7 +104,24 @@ def check_cds_exemption(function_description: str, provides_diagnosis: bool, req
 
 @mcp.tool()
 def hipaa_ai_check(data_types: str, processing_purpose: str, has_baa: bool = False, api_key: str = "") -> str:
-    """Check HIPAA compliance for AI systems processing health data."""
+    """Check HIPAA compliance for AI systems processing health data.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need to assess, audit, or verify compliance
+        requirements. Ideal for gap analysis, readiness checks, and generating
+        compliance documentation.
+
+    When NOT to use:
+        Do not use as a substitute for qualified legal counsel. This tool
+        provides technical compliance guidance, not legal advice.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -87,7 +138,24 @@ def hipaa_ai_check(data_types: str, processing_purpose: str, has_baa: bool = Fal
 
 @mcp.tool()
 def who_health_ai_ethics(ai_application: str, api_key: str = "") -> str:
-    """Evaluate against WHO's 6 principles for health AI ethics."""
+    """Evaluate against WHO's 6 principles for health AI ethics.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need to assess, audit, or verify compliance
+        requirements. Ideal for gap analysis, readiness checks, and generating
+        compliance documentation.
+
+    When NOT to use:
+        Do not use as a substitute for qualified legal counsel. This tool
+        provides technical compliance guidance, not legal advice.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -106,7 +174,24 @@ def who_health_ai_ethics(ai_application: str, api_key: str = "") -> str:
 
 @mcp.tool()
 def dual_compliance_check(description: str, jurisdictions: str = "us,eu", api_key: str = "") -> str:
-    """Check dual FDA + EU AI Act compliance for medical AI devices."""
+    """Check dual FDA + EU AI Act compliance for medical AI devices.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need to assess, audit, or verify compliance
+        requirements. Ideal for gap analysis, readiness checks, and generating
+        compliance documentation.
+
+    When NOT to use:
+        Do not use as a substitute for qualified legal counsel. This tool
+        provides technical compliance guidance, not legal advice.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
