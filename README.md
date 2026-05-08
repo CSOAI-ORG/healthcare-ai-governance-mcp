@@ -1,45 +1,59 @@
-[![healthcare-ai-governance-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/healthcare-ai-governance-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/healthcare-ai-governance-mcp)
-[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
-[![PyPI](https://img.shields.io/pypi/v/healthcare-ai-governance-mcp)](https://pypi.org/project/healthcare-ai-governance-mcp/)
-
-[![healthcare-ai-governance-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/healthcare-ai-governance-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/healthcare-ai-governance-mcp)
-
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/healthcare-ai-governance-mcp)](https://github.com/CSOAI-ORG/healthcare-ai-governance-mcp/stargazers)
+# Healthcare Ai Governance MCP
 
-# uhealthcareU aiU governanceU mcp
+**MCP server for healthcare ai governance mcp operations**
 
-**Healthcare AI Governance MCP — MEOK AI Labs. FDA SaMD, HIPAA, WHO health AI ethics.**
-
-[![npm version](https://img.shields.io/npm/v/@meok-ai/healthcare-ai-governance-mcp)](https://www.npmjs.com/package/@meok-ai/healthcare-ai-governance-mcp)
+[![PyPI](https://img.shields.io/pypi/v/meok-healthcare-ai-governance-mcp)](https://pypi.org/project/meok-healthcare-ai-governance-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
-
-[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/healthcare-ai-governance-mcp/issues)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-MCP_Server-purple)](https://meok.ai)
 
 </div>
 
----
+## Overview
+
+Healthcare Ai Governance MCP provides AI-powered tools via the Model Context Protocol (MCP).
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `classify_samd` | Classify AI/ML Software as Medical Device (SaMD) per FDA framework. |
+| `check_cds_exemption` | Check if Clinical Decision Support AI qualifies for FDA CDS exemption. |
+| `hipaa_ai_check` | Check HIPAA compliance for AI systems processing health data. |
+| `who_health_ai_ethics` | Evaluate against WHO's 6 principles for health AI ethics. |
+| `dual_compliance_check` | Check dual FDA + EU AI Act compliance for medical AI devices. |
 
 ## Installation
 
 ```bash
-pip install healthcare-ai-governance-mcp
-# or
-npm install -g @meok-ai/healthcare-ai-governance-mcp
+pip install meok-healthcare-ai-governance-mcp
 ```
 
-## Quick Start
+## Usage with Claude Desktop
 
-See the project repository for full documentation and examples.
+Add to your Claude Desktop MCP config (`claude_desktop_config.json`):
 
-## Enterprise Support
+```json
+{
+  "mcpServers": {
+    "healthcare-ai-governance": {
+      "command": "python",
+      "args": ["-m", "meok_healthcare_ai_governance_mcp.server"]
+    }
+  }
+}
+```
 
-- 📧 nicholas@csoai.org
-- 🌐 [CSOAI.org](https://csoai.org)
+## Usage with FastMCP
+
+```python
+from mcp.server.fastmcp import FastMCP
+
+# This server exposes 5 tool(s) via MCP
+# See server.py for full implementation
+```
 
 ## License
 
-MIT © [CSOAI](https://csoai.org)
-<!-- mcp-name: io.github.CSOAI-ORG/healthcare-ai-governance-mcp -->
+MIT © [MEOK AI Labs](https://meok.ai)
