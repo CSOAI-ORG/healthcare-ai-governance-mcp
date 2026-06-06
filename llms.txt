@@ -1,0 +1,36 @@
+# healthcare-ai-governance-mcp
+# **MCP server for healthcare ai governance mcp operations**
+
+## Install
+```bash
+pip install healthcare-ai-governance-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `classify_samd`
+Classify AI/ML Software as Medical Device (SaMD) per FDA framework.
+
+### `check_cds_exemption`
+Check if Clinical Decision Support AI qualifies for FDA CDS exemption.
+
+### `hipaa_ai_check`
+Check HIPAA compliance for AI systems processing health data.
+
+### `who_health_ai_ethics`
+Evaluate against WHO's 6 principles for health AI ethics.
+
+### `dual_compliance_check`
+Check dual FDA + EU AI Act compliance for medical AI devices.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.

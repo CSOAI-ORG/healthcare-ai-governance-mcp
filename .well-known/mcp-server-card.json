@@ -1,0 +1,28 @@
+{
+  "name": "healthcare-ai-governance-mcp",
+  "title": "Healthcare Ai Governance Mcp",
+  "description": "Healthcare Ai Governance automation via MCP. Includes classify samd, check cds exemption, hipaa ai check. By MEOK AI Labs.",
+  "version": "1.0.10",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "classify_samd"
+    },
+    {
+      "name": "check_cds_exemption"
+    },
+    {
+      "name": "hipaa_ai_check"
+    },
+    {
+      "name": "who_health_ai_ethics"
+    },
+    {
+      "name": "dual_compliance_check"
+    }
+  ]
+}

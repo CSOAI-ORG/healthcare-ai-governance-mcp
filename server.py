@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
-"""Healthcare AI Governance MCP — MEOK AI Labs. FDA SaMD, HIPAA, WHO health AI ethics."""
+"""
+Healthcare AI Governance MCP — MEOK AI Labs. FDA SaMD, HIPAA, WHO health AI ethics."""
 import json, os
 from datetime import datetime, timezone
 from typing import Optional
 from collections import defaultdict
 from mcp.server.fastmcp import FastMCP
 import sys, os
-sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
-from auth_middleware import check_access
+try:
+    from auth_middleware import check_access
+except ImportError:
+    def check_access(api_key: str = "") -> tuple:
+        return (True, "Open access", "community")
 
 FREE_DAILY_LIMIT = 10
 _usage = defaultdict(list)
@@ -68,7 +72,7 @@ def classify_samd(device_description: str, intended_use: str, risk_to_patient: s
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
     desc = (device_description + " " + intended_use).lower()
     if any(w in desc for w in ["life-sustaining", "implant", "surgery", "critical care"]):
@@ -130,7 +134,7 @@ def check_cds_exemption(function_description: str, provides_diagnosis: bool, req
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
     # CDS exemption criteria (21st Century Cures Act)
     criteria = {
@@ -187,7 +191,7 @@ def hipaa_ai_check(data_types: str, processing_purpose: str, has_baa: bool = Fal
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
     types = [t.strip().lower() for t in data_types.split(",")]
     phi_types = ["name", "ssn", "dob", "address", "phone", "email", "medical record", "diagnosis", "treatment", "prescription", "lab result", "imaging", "genetic"]
@@ -240,7 +244,7 @@ def who_health_ai_ethics(ai_application: str, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
     principles = {
         "protect_autonomy": "Ensure informed consent and human decision-making in clinical context",
@@ -297,7 +301,7 @@ def dual_compliance_check(description: str, jurisdictions: str = "us,eu", api_ke
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
     juris = [j.strip() for j in jurisdictions.split(",")]
     checks = {}
@@ -312,5 +316,8 @@ def dual_compliance_check(description: str, jurisdictions: str = "us,eu", api_ke
         "crosswalk_note": "Use MEOK crosswalk_bridge to map between FDA and EU AI Act requirements.",
         "total_frameworks": len(checks)}
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()

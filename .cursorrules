@@ -1,0 +1,9 @@
+# healthcare-ai-governance-mcp - Auto-trigger Rules
+
+When the user asks about healthcare ai governance, use healthcare-ai-governance-mcp tools: classify_samd, check_cds_exemption, hipaa_ai_check, who_health_ai_ethics, dual_compliance_check
+
+**MCP server for healthcare ai governance mcp operations**
+
+Install: `pip install healthcare-ai-governance-mcp`
+
+By MEOK AI Labs — MIT licensed.
