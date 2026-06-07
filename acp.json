@@ -1,0 +1,23 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "healthcare-ai-governance-mcp",
+    "description": "Healthcare Ai Governance MCP Server by MEOK AI Labs",
+    "version": "1.0.10",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "healthcare-ai-governance-mcp"
+      }
+    ],
+    "capabilities": [
+      "classify_samd",
+      "check_cds_exemption",
+      "hipaa_ai_check",
+      "who_health_ai_ethics",
+      "dual_compliance_check"
+    ]
+  }
+}

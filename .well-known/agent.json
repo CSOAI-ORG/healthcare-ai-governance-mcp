@@ -1,0 +1,68 @@
+{
+  "name": "healthcare-ai-governance-mcp",
+  "description": "Healthcare Ai Governance MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/healthcare-ai-governance-mcp.html",
+  "version": "1.0.10",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "classify_samd",
+      "name": "Classify Samd",
+      "description": "classify_samd via healthcare-ai-governance-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "check_cds_exemption",
+      "name": "Check Cds Exemption",
+      "description": "check_cds_exemption via healthcare-ai-governance-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "hipaa_ai_check",
+      "name": "Hipaa Ai Check",
+      "description": "hipaa_ai_check via healthcare-ai-governance-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "who_health_ai_ethics",
+      "name": "Who Health Ai Ethics",
+      "description": "who_health_ai_ethics via healthcare-ai-governance-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "dual_compliance_check",
+      "name": "Dual Compliance Check",
+      "description": "dual_compliance_check via healthcare-ai-governance-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
