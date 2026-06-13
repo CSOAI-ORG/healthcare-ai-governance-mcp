@@ -4,9 +4,8 @@
   "version": "1.0.12",
   "description": "Healthcare Ai Governance MCP Server by MEOK AI Labs",
   "repository": {
-    "type": "git",
     "url": "https://github.com/CSOAI-ORG/healthcare-ai-governance-mcp",
-    "source": "https://github.com/CSOAI-ORG/healthcare-ai-governance-mcp"
+    "source": "github"
   },
   "packages": [
     {
