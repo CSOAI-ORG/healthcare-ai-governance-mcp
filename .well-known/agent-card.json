@@ -1,0 +1,122 @@
+{
+  "name": "Healthcare Ai Governance Mcp",
+  "version": "1.0.10",
+  "url": "https://mcp.meok.ai/healthcare-ai-governance-mcp/a2a",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "protocolVersion": "0.3.0",
+  "description": "Healthcare Ai Governance automation via MCP. Includes classify samd, check cds exemption, hipaa ai check. By MEOK AI Labs.",
+  "provider": {
+    "organization": "MEOK AI LABS",
+    "url": "https://meok.ai"
+  },
+  "defaultInputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "skills": [
+    {
+      "id": "classify_samd",
+      "name": "Classify Samd",
+      "description": "Classify Samd — a tool of the healthcare-ai-governance-mcp MCP.",
+      "tags": [
+        "governance",
+        "care",
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "check_cds_exemption",
+      "name": "Check Cds Exemption",
+      "description": "Check Cds Exemption — a tool of the healthcare-ai-governance-mcp MCP.",
+      "tags": [
+        "governance",
+        "care",
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "hipaa_ai_check",
+      "name": "Hipaa Ai Check",
+      "description": "Hipaa Ai Check — a tool of the healthcare-ai-governance-mcp MCP.",
+      "tags": [
+        "governance",
+        "care",
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "who_health_ai_ethics",
+      "name": "Who Health Ai Ethics",
+      "description": "Who Health Ai Ethics — a tool of the healthcare-ai-governance-mcp MCP.",
+      "tags": [
+        "governance",
+        "care",
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "dual_compliance_check",
+      "name": "Dual Compliance Check",
+      "description": "Dual Compliance Check — a tool of the healthcare-ai-governance-mcp MCP.",
+      "tags": [
+        "governance",
+        "care",
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    }
+  ],
+  "documentationUrl": "https://meok.ai",
+  "x-meok": {
+    "mcp_name": "healthcare-ai-governance-mcp",
+    "verifier": "https://proofof.ai/verify",
+    "governed_by": "CSOAI 52-article charter"
+  }
+}
