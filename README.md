@@ -153,3 +153,8 @@ Once configured, ask your assistant, for example:
 - "Use `classify_samd` to …"
 - "Use `check_cds_exemption` to …"
 - "Use `hipaa_ai_check` to …"
+
+## See also
+
+MEOK compliance MCP fleet:
+[`accessibility-ai-mcp`](https://github.com/CSOAI-ORG/accessibility-ai-mcp), [`ai-ops-mcp`](https://github.com/CSOAI-ORG/ai-ops-mcp), [`health-check-ai-mcp`](https://github.com/CSOAI-ORG/health-check-ai-mcp), [`plagiarism-checker-ai-mcp`](https://github.com/CSOAI-ORG/plagiarism-checker-ai-mcp)
